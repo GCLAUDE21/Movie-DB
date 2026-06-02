@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { searchIdMovies } from '../api/moviedb';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const movie = () => {
 
     const { id } = useParams() // Recupere l'id du film via l'url
     const [movie, setMovie] = useState({})
     const navigate = useNavigate() // permet d'appeler le retour a la page -1
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         const fetchMovie = async () => {
-            const film = await searchIdMovies(id)
-            setMovie(film)
+            try {
+                const film = await searchIdMovies(id)
+                if (!film) {
+                    setError(true)
+                } else {
+                    setMovie(film)
+                    setError(false)
+                }
+            } catch (err) {
+                setError(true)
+            }
         };
         fetchMovie()
     }, [id])
@@ -19,9 +31,10 @@ const movie = () => {
 
     return (
         <>
-        <div className="cardFocus">
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={`Affiche de  ${movie.title}`} />
-            <h3>{movie.title}</h3>
+        < Header />
+        {error ? <h3>Aucun film trouvé</h3> : <div className="cardFocus">
+            <img src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} alt={`Affiche de  ${movie.title}`} />
+            <h2>{movie.title}</h2>
             <h4>"{movie.tagline}"</h4>
             <span>{movie.release_date && "Sortie le " + new Date(movie.release_date).toLocaleDateString("fr-FR", {
                 day: "numeric",
@@ -29,7 +42,7 @@ const movie = () => {
                 year: "numeric"
             })}</span>
             <ul>{movie.genres?.map((genre) => (
-                < Link to={`/genre/${genre.id}`}> <li key={genre.id}>{genre.name}</li> </Link >
+                < Link key={genre.id} to={`/genre/${genre.id}`}> <li>{genre.name}</li> </Link >
             ))}</ul>
             <span>Note : {movie?.vote_average?.toFixed(1)}</span>
             <span>{ movie.budget > 0 && ` Budget : ${movie.budget.toLocaleString("fr-FR")} €`}</span>
@@ -38,7 +51,8 @@ const movie = () => {
             <button onClick={() => navigate(-1)}>Retour</button>
 
             
-        </div>
+        </div> }
+        < Footer />
         </>
     );
 };

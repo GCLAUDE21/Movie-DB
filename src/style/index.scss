@@ -1,5 +1,104 @@
 @use "./settings" as *;
+@use "./components/header";
+@use "./components/moviecard";
+@use "./components/filters";
+@use "./components/footer";
+@use "./pages/movie";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
 
 body {
-    background: beige;
+    background: url("../assets/img/movie-background-collage.jpg") center/cover fixed;
+    background-color: $primary;
+    color: $textMain;
+    font-family: $fontBody;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: $fontTitle;
+    font-size: 3.5rem;
+    background: $gradientAccent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-family: $fontTitle;
+    font-size: 2.3rem;
+    text-shadow: 0 0 20px $accent2;
+}
+
+h3 {
+    font-family: $fontTitle;
+    font-size: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-shadow: 0 0 20px $accent2;
+}
+
+h4 {
+    font-family: $fontTitle;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-shadow: 0 0 20px $accent2;
+}
+
+p, a {
+    font-family: $fontBody;
+    text-decoration: none;
+    color: $textMain;
+
+    &:visited {
+        color: $textMain;
+    }
+
+    &:link {
+        color: $textMain;
+    }
+}
+
+button {
+    background: $gradientAccent;
+    color: $textMain;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    font-family: $fontBody;
+    font-weight: bold;
+    transition: $transition;
+    margin: 5px;
+
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+            box-shadow: $glowCyan;
+         }
+}
+
+.navPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    & span {
+        color: grey;
+        font-family: $fontBody;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        border: 1px solid $borderColor;
+        padding: 8px 16px;
+        border-radius: $borderRadius;
+
+    }
 }

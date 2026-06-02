@@ -1,0 +1,65 @@
+@use "../settings" as *;
+
+.filters {
+    margin: 20px;
+    border-radius: $borderRadius;
+    padding: 20px;
+    box-shadow: $glowCyan;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+
+    & h2 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    & .options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        & label {
+            color: grey;
+            font-family: $fontBody;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        & select {
+            background: $primary;
+            color: $textMain;
+            border: 1px solid $borderColor;
+            border-radius: $borderRadius;
+            padding: 8px 15px;
+            font-family: $fontBody;
+            transition: $transition;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+                border-color: $accent1;
+                box-shadow: $glowCyan;
+            }
+        }
+
+        & input {
+            background: $primary;
+            color: $textMain;
+            border: 1px solid $borderColor;
+            border-radius: $borderRadius;
+            padding: 8px 15px;
+            font-family: $fontBody;
+            transition: $transition;
+            width: 100px;
+
+            &:focus {
+                outline: none;
+                border-color: $accent1;
+                box-shadow: $glowCyan;
+            }
+        }
+    }
+}

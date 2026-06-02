@@ -1,0 +1,49 @@
+@use "../settings" as *;
+
+.resultat, .cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    & a {
+        flex: 1 1 15%;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+
+        & .cardMovie {
+            background: $secondary;
+            width: 250px;
+            height: 450px;
+            border-radius: $borderRadius;
+            border: 1px solid $borderColor;
+            box-shadow: $glowCyan;
+            margin: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+            transition: $transition;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: $glowViolet;
+                border-color: $accent2;
+            }
+        }
+
+        & img {
+            width: 100%;
+            border-radius: $borderRadius;
+            height: 300px;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        & span {
+            margin: 5px;
+            font-size: 0.8rem;
+            color: grey;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use "../settings" as *;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    background: $secondary;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    padding: 20px;
+    box-shadow: $glowCyan;
+    text-align: center;
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+
+    & span, & a {
+        color: grey;
+        font-family: $fontBody;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    & a {
+        color: $accent1;
+        transition: $transition;
+
+        &:hover {
+            text-shadow: $glowCyan;
+        }
+    }
+}
