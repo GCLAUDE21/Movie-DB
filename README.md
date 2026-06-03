@@ -30,6 +30,21 @@ npm run dev
 - React Router DOM
 - Axios
 - SCSS
+- Vitest
+- React Testing Library
+
+## 🧪 Tests
+
+```bash
+npm run test
+```
+
+Tests réalisés avec Vitest et React Testing Library :
+
+- Recherche de films par mot clé
+- Récupération des films populaires
+- Récupération d'un film par ID
+- Affichage des cards (titre, note, affiche)
 
 ## 🔑 API
 
