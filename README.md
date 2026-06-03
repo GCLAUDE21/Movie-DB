@@ -1,16 +1,40 @@
-# React + Vite
+# 🎬 Movie DB
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web permettant de rechercher et parcourir des films en utilisant l'API The Movie Database (TMDB).
 
-Currently, two official plugins are available:
+Réalisée dans le cadre de l'examen d'entrée - ForEach Academy 2026.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/GCLAUDE21/moviedb-app
+cd moviedb-app
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## 📋 Fonctionnalités
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Recherche de films par mot clé
+- Affichage des films populaires par défaut
+- Navigation par genre
+- Filtres avancés : genre, note, année de sortie
+- Page détail par film
+- Affichage par pagination
+
+## 🛠️ Technologies
+
+- React + Vite
+- React Router DOM
+- Axios
+- SCSS
+
+## 🔑 API
+
+Données fournies par [The Movie Database](https://www.themoviedb.org).
+
+## 👤 Auteur
+
+Guillaume CLAUDE

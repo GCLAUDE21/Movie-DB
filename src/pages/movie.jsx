@@ -35,7 +35,7 @@ const movie = () => {
         {error ? <h3>Aucun film trouvé</h3> : <div className="cardFocus">
             <img src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} alt={`Affiche de  ${movie.title}`} />
             <h2>{movie.title}</h2>
-            <h4>"{movie.tagline}"</h4>
+            {movie.tagline && <h4> " {movie.tagline} " </h4>}
             <span>{movie.release_date && "Sortie le " + new Date(movie.release_date).toLocaleDateString("fr-FR", {
                 day: "numeric",
                 month: "long",
@@ -46,6 +46,7 @@ const movie = () => {
             ))}</ul>
             <span>Note : {movie?.vote_average?.toFixed(1)}</span>
             <span>{ movie.budget > 0 && ` Budget : ${movie.budget.toLocaleString("fr-FR")} €`}</span>
+            {movie.runtime > 0 && <span>Durée : {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}min</span>}
             <p>{movie.overview}</p>
 
             <button onClick={() => navigate(-1)}>Retour</button>

@@ -13,6 +13,17 @@ header {
     width: 80%;
     max-width: 800px;
 
+    @media (max-width: 390px) {
+        button {
+            display: none
+        }
+
+        h1 {
+            font-size: 2.8rem ;
+        }
+        
+    }
+
     & .header-container {
         display: flex;
         flex-direction: column;

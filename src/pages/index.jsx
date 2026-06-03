@@ -72,7 +72,7 @@ const index = () => {
                 <button onClick={() => totalPages !== page && setPage(page + 1)}>Suivante</button>
             </div>}
             <section className="resultat">
-                {error ? <h3>Aucun film trouvé</h3> : movies.map((movie) => (
+                {error ? <h3 id='spanresult'>Aucun film trouvé</h3> : movies.map((movie) => (
                     <MovieCard key={movie.id} movie={movie} />
                 ))}
             </section>
