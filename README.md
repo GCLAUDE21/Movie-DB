@@ -23,6 +23,7 @@ npm run dev
 - Filtres avancés : genre, note, année de sortie
 - Page détail par film
 - Affichage par pagination
+- Gestion des erreurs API
 
 ## 🛠️ Technologies
 
